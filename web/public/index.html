@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html ng-app="quickinfo" class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quickinfo</title>
+
+  <!-- Angular -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-resource.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-sanitize.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-cookies.js"></script>
+
+  <!-- Angular app -->
+  <script src="js/app/app.js"></script>
+  <!-- Models -->
+  <script src="js/app/models/feeditem.js"></script>
+  <script src="js/app/models/contact.js"></script>
+  <!-- Controllers -->
+  <script src="js/app/controllers/logincontroller.js"></script>
+  <script src="js/app/controllers/feeditemscontroller.js"></script>
+  <script src="js/app/controllers/contactscontroller.js"></script>
+  <script src="js/app/controllers/contactcontroller.js"></script>
+
+  <!-- Foundation css -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/foundation.css">
+
+  <!-- App css -->
+  <link rel="stylesheet" href="css/app.css">
+
+  <!-- Open Sans Font -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div class="off-canvas-wrap" data-offcanvas>
+    <div class="inner-wrap">
+      <nav class="tab-bar">
+        <section class="left-small">
+          <a class="left-off-canvas-toggle menu-icon">
+            <span></span>
+          </a>
+        </section>
+        <section class="middle tab-bar-section">
+          <h1 class="title">Quickinfo</h1>
+        </section>
+      </nav>
+
+      <aside class="left-off-canvas-menu">
+        <ul class="off-canvas-list">
+          <li>
+            <label>Quickinfo</label>
+          </li>
+          <li><a href="#/">Home</a></li>
+          <li><a href="#/contacts">Contacts</a></li>
+        </ul>
+      </aside>
+
+      <section class="main-section">
+        <div ng-view></div>
+      </section>
+
+      <a class="exit-off-canvas"></a>
+
+    </div>
+  </div>
+
+  <!--
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#/" class="brand-logo center">Quickinfo</a>
+        <a href="#/" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#/" title="Home"><i class="material-icons left">home</i></a></li>
+          <li><a href="#/contacts" title="Contacts"><i class="material-icons">contacts</i></a></li>
+          <li><a href="#/" ng-click="toggleFilters()" title="Search" class="waves-effect"><i class="material-icons">search</i></a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-menu">
+          <li><a href="#/"><i class="material-icons left">home</i>Home</a></li>
+          <li><a href="#/" ng-click="toggleFilters()"><i class="material-icons left">search</i>Search</a></li>
+          <li><a href="#/contacts"><i class="material-icons left">contacts</i>Contacts</a></li>
+        </ul>
+        <script>$(function(){ $(".button-collapse").sideNav({ edge: 'left', closeOnClick: true }); })</script>
+      </div>
+    </nav>
+  </div>
+  <div ng-view></div> -->
+
+  <!-- Founddation css -->
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+    $(".off-canvas-list a").on("click.toggleCanvas", function() {
+      $(".off-canvas-wrap.move-right").removeClass('move-right');
+    });
+  </script>
+</body>
+
+</html>

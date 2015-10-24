@@ -1,0 +1,10 @@
+<div>
+  <ul class="collection">
+    <li class="collection-item avatar hoverable" ng-repeat="contact in contacts" ng-click="handleContactClicked(contact)">
+      <div class="title">
+        <img class="avatar" src="images/{{ contact.to }}-avatar-small.jpg">
+        {{ contact.studentName }}
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="title">
+    <img class="avatar" src="images/{{ contact.to }}-avatar-small.jpg" >
+    {{ contact.studentName }}
+  </div>
+  <div class="content">
+    <div class="label">Contacts</div>
+    <div class="content-wrapper">
+      <div class="content-item" ng-repeat="contactPerson in contact.contactPersons track by $index">
+        <div ng-bind="contactPerson"></div>
+      </div>
+      <div class="actions">
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="label">Mobile</div>
+    <div class="content-item" ng-repeat="mobilePhone in contact.mobilePhones track by $index">
+      <div class="right">
+        <a href="tel:{{mobilePhone}}">CALL</a>
+        <a href="sms:{{mobilePhone}}">SMS</a>
+      </div>
+      <div ng-bind-html="mobilePhone"></div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="label">Address</div>
+    <div class="content-item" ng-repeat="address in contact.addresses track by $index">
+      <div class="right">
+        <a href="comgooglemaps://?q={{address}}">MAP</a>
+      </div>
+      <div ng-bind="address"></div>
+    </div>
+  </div>
+</div>

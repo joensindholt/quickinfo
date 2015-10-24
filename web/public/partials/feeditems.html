@@ -1,0 +1,36 @@
+<div class="container">
+  <p class="text-center meta">Opdateret for [kommer snart] siden</p>
+
+  <div class="row" ng-show="isFiltersShown">
+    <div class="input-field col s12 m12 l4">
+      <input ng-model="search.to" id="searchTo" type="text" class="validate">
+      <label for="searchTo">Angående</label>
+    </div>
+    <div class="input-field col s12 m12 l4">
+      <input ng-model="search.from" id="searchFrom" type="text" class="validate">
+      <label for="searchFrom">Fra</label>
+    </div>
+    <div class="input-field col s12 m12 l4">
+      <input ng-model="search.date" id="searchDate" type="text" class="validate">
+      <label for="searchDate">Dato</label>
+    </div>
+    <div class="input-field col s12 m12 l12">
+      <input ng-model="search.$" id="searchAll" type="text" class="validate">
+      <label for="searchAll">Fritekst</label>
+    </div>
+  </div>
+</div>
+
+<ul class="collection">
+  <li class="collection-item" ng-repeat="feedItem in feedItems | filter:search:strict">
+    <div class="title">
+      <img class="avatar" src="{{ 'images/' + feedItem.to + '-avatar-small.jpg' }}" />
+      {{ feedItem.title }}
+    </div>
+    <div class="content">
+      <div ng-if="feedItem.from" class="meta">{{ feedItem.from }}</div>
+      <div class="meta">{{ feedItem.date }}</div>
+      <p ng-bind-html="feedItem.text"></p>
+    </div>
+  </li>
+</ul>
